@@ -10,7 +10,15 @@ public class CarRace {
     private final TrialNumber trialNumber;
 
     public CarRace(String[] carNames, int trialNumber) {
-        this.cars = new Cars(carNames);
+        this(new Cars(carNames), trialNumber);
+    }
+
+    public CarRace(List<Car> cars, int trialNumber) {
+        this(new Cars(cars), trialNumber);
+    }
+
+    public CarRace(Cars cars, int trialNumber) {
+        this.cars = cars;
         this.trialNumber = new TrialNumber(trialNumber);
     }
 
